@@ -6,9 +6,9 @@ import {
   FriendName,
 } from './FriendListItem.styled';
 
-export const FriendListItem = ({ avatar, name, isOnline, id }) => {
+export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
-    <Item key={id}>
+    <Item>
       <FriendStatus status={isOnline}></FriendStatus>
       <FriendAvatar src={avatar} alt="User avatar" width="48" />
       <FriendName>{name}</FriendName>
@@ -17,12 +17,7 @@ export const FriendListItem = ({ avatar, name, isOnline, id }) => {
 };
 
 FriendListItem.propTypes = {
-  friends: PropTypes.arrayOf(
-    PropTypes.exact({
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool.isRequired,
-      id: PropTypes.number.isRequired,
-    })
-  ),
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
